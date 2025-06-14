@@ -52,11 +52,13 @@ export default function VoiceChat({ sessionId, agentType, documents, onBack }) {
 
   const initializeVoiceChat = () => {
     addToDebugLog("🔌 Connecting to WebSocket...");
-    const WEBSOCKET_URL =
-      process.env.NODE_ENV === "production"
-        ? process.env.NEXT_PUBLIC_BASE_URL
-        : "http://localhost:8080";
-    socketRef.current = io(WEBSOCKET_URL);
+    // const WEBSOCKET_URL =
+    //   process.env.NODE_ENV === "production"
+    //     ? process.env.NEXT_PUBLIC_BASE_URL
+    //     : "http://localhost:8080";
+    socketRef.current = io(
+      "https://voice-agent-rest-production.up.railway.app"
+    );
 
     socketRef.current.on("connect", () => {
       addToDebugLog("✅ WebSocket connected");

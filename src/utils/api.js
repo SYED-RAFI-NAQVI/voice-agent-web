@@ -2,11 +2,12 @@ import axios from "axios";
 
 // const API_BASE_URL = "http://localhost:8080/api";
 
-const BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? process.env.NEXT_PUBLIC_BASE_URL
-    : "http://localhost:8080";
-const API_BASE_URL = `${BASE_URL}/api`;
+// const BASE_URL =
+//   process.env.NODE_ENV === "local"
+//     ? process.env.NEXT_PUBLIC_BASE_URL
+//     : "http://localhost:8080";
+// console.log(process.env.NEXT_PUBLIC_BASE_URL);
+const API_BASE_URL = `https://voice-agent-rest-production.up.railway.app/api`;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
